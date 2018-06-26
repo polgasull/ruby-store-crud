@@ -1,1 +1,9 @@
-<h1> <%= @product.name %></h1>
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="<%=@product.image%>" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"><%=@product.name%></h5>
+    <p class="card-text"><%=@product.description%></p>
+    <p class="card-text"><%=@product.price%></p>
+    <%= link_to "Product List", products_path, class: "btn btn-primary" %>
+  </div>
+</div>

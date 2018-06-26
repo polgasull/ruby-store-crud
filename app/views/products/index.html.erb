@@ -4,7 +4,7 @@
   </div>
   <div class="col">
     <div class="pull-right">
-      <%= link_to "New", products_new_path %>
+      <%= link_to "New", products_new_path, :class => "btn btn-primary" %>
     </div>
   </div>
 </div>
@@ -24,9 +24,9 @@
       <td><%= product.name %></td>
       <td><%= product.description %></td>
       <td><%= product.price %></td>
-      <td><%= link_to "Show" %> </td>
-      <td><%= link_to "Edit", product_edit_path(product) %> </td>
-      <td><%= link_to "Delete", product_delete_path(product), method: :delete, data: {confirm: t('are_you_sure')} %> </td>
+      <td><%= link_to "Show", product_show_path(product), class: "btn btn-info" %> </td>
+      <td><%= link_to "Edit", product_edit_path(product), class: "btn btn-primary" %> </td>
+      <td><%= link_to "Delete", product_delete_path(product), class: "btn btn-danger", method: :delete, data: {confirm: t('are_you_sure')} %> </td>
     </tr>
     <%end%>
   </tbody>
