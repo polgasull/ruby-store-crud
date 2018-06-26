@@ -21,3 +21,8 @@
 
 en:
   hello: "Hello world"
+  name: "Name"
+  description: "Description"
+  price: "Price"
+  actions: "Actions"
+  product_list: "Product list"

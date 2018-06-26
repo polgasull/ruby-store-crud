@@ -1,0 +1,24 @@
+<h1><%= t('product_list') %></h1>
+
+<table class="table table">
+  <thead>
+    <th scope="col">#</th>
+    <th scope="col"><%=t('name')%></th>
+    <th scope="col"><%=t('description')%></th>
+    <th scope="col"><%=t('price')%></th>
+    <th scope="col" colspan="3" align="center"><%=t('actions')%></th>
+  </thead>
+  <tbody>
+    <% @products.each_with_index do |product, index| %>
+    <tr>
+      <td scope="row"><%= index + 1 %></td>
+      <td><%= product.name %></td>
+      <td><%= product.description %></td>
+      <td><%= product.price %></td>
+      <td><%= link_to "Show" %> </td>
+      <td><%= link_to "Edit" %> </td>
+      <td><%= link_to "Delete" %> </td>
+    </tr>
+    <%end%>
+  </tbody>
+</table>
