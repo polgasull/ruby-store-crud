@@ -1,4 +1,13 @@
-<h1><%= t('product_list') %></h1>
+<div class="row">
+  <div class="col">
+    <h1><%= t('product_list') %></h1>
+  </div>
+  <div class="col">
+    <div class="pull-right">
+      <%= link_to "New", products_new_path %>
+    </div>
+  </div>
+</div>
 
 <table class="table table">
   <thead>
@@ -16,8 +25,8 @@
       <td><%= product.description %></td>
       <td><%= product.price %></td>
       <td><%= link_to "Show" %> </td>
-      <td><%= link_to "Edit" %> </td>
-      <td><%= link_to "Delete" %> </td>
+      <td><%= link_to "Edit", product_edit_path(product) %> </td>
+      <td><%= link_to "Delete", product_delete_path(product), method: :delete, data: {confirm: t('are_you_sure')} %> </td>
     </tr>
     <%end%>
   </tbody>
