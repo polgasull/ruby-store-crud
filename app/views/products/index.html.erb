@@ -4,30 +4,15 @@
   </div>
   <div class="col">
     <div class="pull-right">
-      <%= link_to "New", products_new_path, :class => "btn btn-primary" %>
+      <%= link_to t('new_product'), products_new_path, :class => "btn btn-primary" %>
     </div>
   </div>
 </div>
 
-<table class="table table">
-  <thead>
-    <th scope="col">#</th>
-    <th scope="col"><%=t('name')%></th>
-    <th scope="col"><%=t('description')%></th>
-    <th scope="col"><%=t('price')%></th>
-    <th scope="col" colspan="3" align="center"><%=t('actions')%></th>
-  </thead>
-  <tbody>
+<div class="row">
     <% @products.each_with_index do |product, index| %>
-    <tr>
-      <td scope="row"><%= index + 1 %></td>
-      <td><%= product.name %></td>
-      <td><%= product.description %></td>
-      <td><%= product.price %></td>
-      <td><%= link_to "Show", product_show_path(product), class: "btn btn-info" %> </td>
-      <td><%= link_to "Edit", product_edit_path(product), class: "btn btn-primary" %> </td>
-      <td><%= link_to "Delete", product_delete_path(product), class: "btn btn-danger", method: :delete, data: {confirm: t('are_you_sure')} %> </td>
-    </tr>
+    <div class="col-4">
+      <%= render 'product_card', product: product %>
+    </div>
     <%end%>
-  </tbody>
-</table>
+</div>
