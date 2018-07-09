@@ -11,8 +11,34 @@
 
 <div class="row">
     <% @products.each_with_index do |product, index| %>
-    <div class="col-4">
+    <div class="col-3 product-card-col mb-5">
       <%= render 'product_card', product: product %>
     </div>
     <%end%>
 </div>
+
+
+<% content_for :footer do %>
+
+<script>
+
+$(document).ready(function() {
+
+  $('.product-card-col').hover(
+    function(){
+      $(this).animate({
+        marginTop: "-4px",
+      }, 200)
+    },
+    function(){
+      $(this).animate({
+        marginTop: "0%"
+      }, 200)
+    }
+  );
+
+});
+
+</script>
+
+<% end %>
