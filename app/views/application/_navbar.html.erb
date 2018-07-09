@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <div class="container-fluid">
+    <a href="/" class="navbar-brand">
+      <img src="<%=asset_path('vica-sl-logo.svg')%>" width="30" height="30" class="d-inline-block align-top vica-logo" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a href="#home" class="nav-link"><%=t('home')%></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%=t('services')%>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#"><%=t('living_place')%></a>
+            <a class="dropdown-item" href="#"><%=t('commercial')%></a>
+            <a class="dropdown-item" href="#"><%=t('rehabilitation')%></a>
+            <a class="dropdown-item" href="#"><%=t('public_equipment')%></a>
+            <a class="dropdown-item" href="#"><%=t('industry')%></a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="<%=products_path%>" class="nav-link"><%=t('projects')%></a>
+        </li>
+        <li class="nav-item">
+          <a href="#create-head-section" class="nav-link"><%=t('about_us')%></a>
+        </li>
+        <li class="nav-item">
+          <a href="#share-head-section" class="nav-link"><%=t('clients')%></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
