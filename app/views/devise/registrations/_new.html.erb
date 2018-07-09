@@ -2,24 +2,24 @@
   <%= devise_error_messages! %>
 
   <div class="form-group">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-lg", placeholder: "email" %>
+    <%= f.label :email, t('email') %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-lg", placeholder: t('email') %>
   </div>
 
   <div class="form-group">
-    <%= f.label :password %>
+    <%= f.label :password, t('password') %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off", class: "form-control form-control-lg", placeholder: "password" %>
+    <%= f.password_field :password, autocomplete: "off", class: "form-control form-control-lg", placeholder: t('password') %>
   </div>
 
   <div class="form-group">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control form-control-lg", placeholder: "confirm password" %>
+    <%= f.label :password_confirmation, t('confirm_password') %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control form-control-lg", placeholder: t('confirm_password') %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up", class: "btn btn-outline-light btn-block" %>
+    <%= f.submit t('sign_up'), class: "btn btn-outline-light btn-block" %>
   </div>
 <% end %>
