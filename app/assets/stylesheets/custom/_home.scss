@@ -1,0 +1,45 @@
+#header-section {
+  background-image: url('architecture-background.jpg');
+  background-repeat: no-repeat;
+  min-height: 700px;
+  background-size: cover;
+  background-attachment: fixed;
+  color: $white-font-color;
+
+  .dark-overlay {
+    background-color: $dark-overlay;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 700px;
+  }
+
+  .home-inner {
+    padding-top: 150px;
+  }
+
+  .card-form {
+    opacity: 0.8;
+  }
+
+  .fa {
+    color: $primary-color;
+    background: #fff;
+    padding: 4px;
+    border-radius: 5px;
+    font-size: $icon-size
+  }
+}
+
+#create-head-section {
+ color: $white-font-color;
+}
+
+#share-head-section {
+ color: $white-font-color;
+}
+
+#main-footer {
+  color: $white-font-color;
+}
