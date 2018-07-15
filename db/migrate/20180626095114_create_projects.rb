@@ -1,12 +1,14 @@
-class CreateProducts < ActiveRecord::Migration[5.0]
+class CreateProjects < ActiveRecord::Migration[5.0]
   def change
-    create_table :products do |t|
+    create_table :projects do |t|
       t.string :name
+      t.string :location
+      t.string :surface
+      t.string :duration
       t.text :description
       t.text :image
       t.text :image_second
       t.text :image_third
-      t.integer :price
 
       t.timestamps
     end

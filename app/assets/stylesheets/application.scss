@@ -1,7 +1,10 @@
-@import "paper/variables";
+@import "helpers/variables";
 
-@import "custom/layout",
-        "custom/devise",
-        "custom/navbar",
-        "custom/home",
-        "custom/products";
+@import "layout/layout",
+        "layout/navbar",
+        "layout/footer";
+
+@import "custom/devise";
+
+@import "pages/home",
+        "pages/projects";

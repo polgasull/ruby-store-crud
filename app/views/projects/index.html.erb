@@ -1,18 +1,13 @@
 <div class="row">
   <div class="col">
-    <h1><%= t('product_list') %></h1>
-  </div>
-  <div class="col">
-    <div class="pull-right">
-      <%= link_to t('new_product'), products_new_path, :class => "btn btn-primary" %>
-    </div>
+    <h1><%= t('project_list') %></h1>
   </div>
 </div>
 
 <div class="row">
-    <% @products.each_with_index do |product, index| %>
-    <div class="col-3 product-card-col mb-5">
-      <%= render 'product_card', product: product %>
+    <% @projects.each_with_index do |project, index| %>
+    <div class="col-3 project-card-col mb-5">
+      <%= render 'project_card', project: project %>
     </div>
     <%end%>
 </div>
@@ -24,7 +19,7 @@
 
 $(document).ready(function() {
 
-  $('.product-card-col').hover(
+  $('.project-card-col').hover(
     function(){
       $(this).animate({
         marginTop: "-4px",

@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col">
+    <h1><%= t('project_list') %></h1>
+  </div>
+  <div class="col">
+    <div class="pull-right">
+      <%= link_to t('new_project'), admin_new_project_path, :class => "btn btn-primary" %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+    <% @projects.each_with_index do |project, index| %>
+    <div class="col-3 project-card-col mb-5">
+      <%= render 'admin_project_card', project: project %>
+    </div>
+    <%end%>
+</div>
+
+
+<% content_for :footer do %>
+
+<script>
+
+$(document).ready(function() {
+
+  $('.project-card-col').hover(
+    function(){
+      $(this).animate({
+        marginTop: "-4px",
+      }, 200)
+    },
+    function(){
+      $(this).animate({
+        marginTop: "0%"
+      }, 200)
+    }
+  );
+
+});
+
+</script>
+
+<% end %>
