@@ -32,6 +32,10 @@
   <%= f.label :image_third %>
   <%= f.text_field :image_third, class: "form-control" %>
 </div>
+<div class="form-group">
+  <%= f.label :picture %>
+  <%= f.file_field :picture, class: "form-control" %>
+</div>
 
 <div>
   <%= f.submit t('save'), :class => "btn btn-primary" %>

@@ -1,6 +1,5 @@
 class AdminController < ApplicationController
   before_action :authenticate_user!
-  protect_from_forgery with: :exception
 
   def projects
     @projects = Project.all
@@ -12,10 +11,22 @@ class AdminController < ApplicationController
 
   def create_project
     @project = Project.new(project_params)
-    if @project.save
-      redirect_to admin_projects_path
-    else
-      render :new
+
+    respond_to do |format|
+
+      if @project.save
+
+        if params[:images]
+          params[:images].each { |image|
+          @project.pictures.create(image: image)
+          }
+        end
+        format.html { redirect_to admin_projects_path, notice: "Proyecto creado con éxito" }
+        format.json { render json: @project, status: :created, location: @project }
+      else
+        format.html { render action: "new"}
+        format.json { render json: @project.errors, status: :unprocessable_entity}
+      end
     end
   end
 
@@ -45,7 +56,7 @@ class AdminController < ApplicationController
   private
 
     def project_params
-      params.require(:project).permit(:name, :location, :surface, :duration, :description,  :image, :image_second, :image_third)
+      params.require(:project).permit(:name, :location, :surface, :duration, :description, :image, :image_second, :image_third)
     end
 
 end
